@@ -13,11 +13,10 @@
     content="دعوة زفاف خاصة"
   >
 
-  <meta name="theme-color" content="#191511">
+  <meta name="theme-color" content="#17130f">
 
   <title>دعوة زفاف</title>
 
-  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
@@ -33,9 +32,9 @@
 
 <body>
 
-  <!-- =========================================
-       OPENING SCREEN
-  ========================================== -->
+  <!-- =====================================================
+       OPENING
+  ====================================================== -->
 
   <section
     class="opening-screen"
@@ -43,7 +42,11 @@
     aria-labelledby="openingTitle"
   >
 
-    <div class="opening-ambient" aria-hidden="true"></div>
+    <div
+      class="opening-glow"
+      aria-hidden="true"
+    ></div>
+
 
     <div class="opening-header">
 
@@ -65,15 +68,24 @@
       aria-label="فتح دعوة الزفاف"
     >
 
-      <span class="envelope-stage" aria-hidden="true">
+      <span
+        class="envelope-stage"
+        aria-hidden="true"
+      >
 
         <span class="envelope-shadow"></span>
+
 
         <span class="envelope">
 
           <span class="envelope-back"></span>
 
+
+          <!-- الرسالة داخل الظرف -->
+
           <span class="letter-preview">
+
+            <span class="preview-border"></span>
 
             <span class="letter-preview-small">
               دعوة زفاف
@@ -93,11 +105,17 @@
               14 OCT 2027
             </span>
 
+            <span class="preview-mark">
+              THE SEALED LETTER
+            </span>
+
           </span>
+
 
           <span class="envelope-flap"></span>
 
           <span class="envelope-pocket"></span>
+
 
           <span class="wax-seal">
 
@@ -133,9 +151,9 @@
 
 
 
-  <!-- =========================================
-       MAIN INVITATION
-  ========================================== -->
+  <!-- =====================================================
+       MAIN
+  ====================================================== -->
 
   <main
     class="site-shell"
@@ -144,19 +162,20 @@
   >
 
 
-    <!-- =========================================
+    <!-- =====================================================
          HERO LETTER
-    ========================================== -->
+    ====================================================== -->
 
     <section
       class="letter-card hero-letter"
       aria-labelledby="coupleNames"
     >
 
-      <div class="paper-noise" aria-hidden="true"></div>
+      <div
+        class="paper-noise"
+        aria-hidden="true"
+      ></div>
 
-
-      <!-- top meta -->
 
       <div class="letter-topline">
 
@@ -174,20 +193,17 @@
       </div>
 
 
-      <!-- little ornament -->
-
-      <div class="ink-ornament" aria-hidden="true">
+      <div
+        class="ink-ornament"
+        aria-hidden="true"
+      >
 
         <span></span>
-
         <i></i>
-
         <span></span>
 
       </div>
 
-
-      <!-- host -->
 
       <div class="host-block reveal">
 
@@ -205,8 +221,6 @@
       </div>
 
 
-      <!-- invitation intro -->
-
       <p
         class="invitation-lead reveal"
         id="invitationLead"
@@ -215,8 +229,6 @@
         بدعوتكم لمشاركته فرحة زفاف ابنه
       </p>
 
-
-      <!-- names -->
 
       <div
         class="couple-names reveal"
@@ -230,6 +242,7 @@
           سيف
         </span>
 
+
         <span class="name-connector">
 
           <i></i>
@@ -242,6 +255,7 @@
 
         </span>
 
+
         <span
           class="bride-name"
           id="brideName"
@@ -251,8 +265,6 @@
 
       </div>
 
-
-      <!-- message -->
 
       <p
         class="invitation-copy reveal"
@@ -264,8 +276,6 @@
         في بداية هذا العمر.
       </p>
 
-
-      <!-- postmark -->
 
       <div class="postmark-wrap reveal">
 
@@ -297,6 +307,7 @@
 
         </div>
 
+
         <div class="event-summary">
 
           <span
@@ -318,8 +329,6 @@
 
       </div>
 
-
-      <!-- signature -->
 
       <div class="signature-block reveal">
 
@@ -352,9 +361,9 @@
 
 
 
-    <!-- =========================================
+    <!-- =====================================================
          COUNTDOWN
-    ========================================== -->
+    ====================================================== -->
 
     <section
       class="letter-card countdown-section"
@@ -393,7 +402,10 @@
         </div>
 
 
-        <div class="countdown-divider" aria-hidden="true">
+        <div
+          class="countdown-divider"
+          aria-hidden="true"
+        >
           :
         </div>
 
@@ -411,7 +423,10 @@
         </div>
 
 
-        <div class="countdown-divider" aria-hidden="true">
+        <div
+          class="countdown-divider"
+          aria-hidden="true"
+        >
           :
         </div>
 
@@ -429,7 +444,10 @@
         </div>
 
 
-        <div class="countdown-divider" aria-hidden="true">
+        <div
+          class="countdown-divider"
+          aria-hidden="true"
+        >
           :
         </div>
 
@@ -458,9 +476,9 @@
 
 
 
-    <!-- =========================================
-         DATE / TIME
-    ========================================== -->
+    <!-- =====================================================
+         EVENT
+    ====================================================== -->
 
     <section
       class="letter-card event-section"
@@ -483,8 +501,6 @@
       <div class="event-grid">
 
 
-        <!-- DATE -->
-
         <article class="event-item reveal">
 
           <span class="event-number">
@@ -502,8 +518,6 @@
         </article>
 
 
-        <!-- TIME -->
-
         <article class="event-item reveal">
 
           <span class="event-number">
@@ -520,8 +534,6 @@
 
         </article>
 
-
-        <!-- VENUE -->
 
         <article class="event-item event-item-wide reveal">
 
@@ -549,9 +561,9 @@
 
 
 
-    <!-- =========================================
+    <!-- =====================================================
          LOCATION
-    ========================================== -->
+    ====================================================== -->
 
     <section
       class="letter-card destination-section"
@@ -597,7 +609,10 @@
           فتح الموقع
         </span>
 
-        <span class="action-arrow" aria-hidden="true">
+        <span
+          class="action-arrow"
+          aria-hidden="true"
+        >
           ↗
         </span>
 
@@ -607,9 +622,9 @@
 
 
 
-    <!-- =========================================
+    <!-- =====================================================
          ACTIONS
-    ========================================== -->
+    ====================================================== -->
 
     <section
       class="letter-card actions-section"
@@ -631,14 +646,16 @@
 
       <div class="actions-grid reveal">
 
-
         <button
           class="secondary-action"
           id="calendarButton"
           type="button"
         >
 
-          <span class="action-icon" aria-hidden="true">
+          <span
+            class="action-icon"
+            aria-hidden="true"
+          >
             +
           </span>
 
@@ -655,7 +672,10 @@
           type="button"
         >
 
-          <span class="action-icon" aria-hidden="true">
+          <span
+            class="action-icon"
+            aria-hidden="true"
+          >
             ↗
           </span>
 
@@ -665,20 +685,22 @@
 
         </button>
 
-
       </div>
 
     </section>
 
 
 
-    <!-- =========================================
+    <!-- =====================================================
          CLOSING
-    ========================================== -->
+    ====================================================== -->
 
     <section class="letter-card closing-section">
 
-      <div class="closing-seal reveal" aria-hidden="true">
+      <div
+        class="closing-seal reveal"
+        aria-hidden="true"
+      >
 
         <span id="closingSealInitial">
           س
@@ -706,9 +728,11 @@
 
 
       <div class="closing-line reveal">
+
         <span></span>
         <i></i>
         <span></span>
+
       </div>
 
 
@@ -729,17 +753,14 @@
       </span>
 
       <span id="footerNames">
-        SAIF × ZAHRAA
+        سيف × زهراء
       </span>
 
     </footer>
 
-
   </main>
 
 
-
-  <!-- toast -->
 
   <div
     class="toast"
@@ -747,8 +768,7 @@
     role="status"
     aria-live="polite"
     aria-atomic="true"
-  >
-  </div>
+  ></div>
 
 </body>
 </html>
