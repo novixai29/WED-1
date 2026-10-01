@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+  >
+
+  <meta
+    name="description"
+    content="دعوة زفاف خاصة"
+  >
+
+  <meta name="theme-color" content="#191511">
+
+  <title>دعوة زفاف</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Noto+Kufi+Arabic:wght@300;400;500;600&display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="style.css">
+
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+
+  <!-- =========================================
+       OPENING SCREEN
+  ========================================== -->
+
+  <section
+    class="opening-screen"
+    id="envelopeGate"
+    aria-labelledby="openingTitle"
+  >
+
+    <div class="opening-ambient" aria-hidden="true"></div>
+
+    <div class="opening-header">
+
+      <span class="opening-eyebrow">
+        دعوة خاصة
+      </span>
+
+      <h1 id="openingTitle">
+        رسالة تنتظرك
+      </h1>
+
+    </div>
+
+
+    <button
+      class="envelope-trigger"
+      id="openInvitation"
+      type="button"
+      aria-label="فتح دعوة الزفاف"
+    >
+
+      <span class="envelope-stage" aria-hidden="true">
+
+        <span class="envelope-shadow"></span>
+
+        <span class="envelope">
+
+          <span class="envelope-back"></span>
+
+          <span class="letter-preview">
+
+            <span class="letter-preview-small">
+              دعوة زفاف
+            </span>
+
+            <strong
+              class="letter-preview-name"
+              id="previewNames"
+            >
+              سيف × زهراء
+            </strong>
+
+            <span
+              class="letter-preview-date"
+              id="previewDate"
+            >
+              14 OCT 2027
+            </span>
+
+          </span>
+
+          <span class="envelope-flap"></span>
+
+          <span class="envelope-pocket"></span>
+
+          <span class="wax-seal">
+
+            <span
+              class="seal-initial"
+              id="sealInitial"
+            >
+              س
+            </span>
+
+          </span>
+
+        </span>
+
+      </span>
+
+
+      <span class="open-hint">
+
+        <span class="hint-line"></span>
+
+        <span>
+          المس الختم لفتح الرسالة
+        </span>
+
+        <span class="hint-line"></span>
+
+      </span>
+
+    </button>
+
+  </section>
+
+
+
+  <!-- =========================================
+       MAIN INVITATION
+  ========================================== -->
+
+  <main
+    class="site-shell"
+    id="invitationMain"
+    tabindex="-1"
+  >
+
+
+    <!-- =========================================
+         HERO LETTER
+    ========================================== -->
+
+    <section
+      class="letter-card hero-letter"
+      aria-labelledby="coupleNames"
+    >
+
+      <div class="paper-noise" aria-hidden="true"></div>
+
+
+      <!-- top meta -->
+
+      <div class="letter-topline">
+
+        <span>
+          دعوة زفاف خاصة
+        </span>
+
+        <span
+          class="letter-reference"
+          id="letterReference"
+        >
+          WED · 14 OCT 2027
+        </span>
+
+      </div>
+
+
+      <!-- little ornament -->
+
+      <div class="ink-ornament" aria-hidden="true">
+
+        <span></span>
+
+        <i></i>
+
+        <span></span>
+
+      </div>
+
+
+      <!-- host -->
+
+      <div class="host-block reveal">
+
+        <span class="section-kicker">
+          بدعوة كريمة من
+        </span>
+
+        <p
+          class="host-name"
+          id="hostName"
+        >
+          السيد حامد رشيد
+        </p>
+
+      </div>
+
+
+      <!-- invitation intro -->
+
+      <p
+        class="invitation-lead reveal"
+        id="invitationLead"
+      >
+        بكل الفرح والسرور يتشرف السيد حامد رشيد
+        بدعوتكم لمشاركته فرحة زفاف ابنه
+      </p>
+
+
+      <!-- names -->
+
+      <div
+        class="couple-names reveal"
+        id="coupleNames"
+      >
+
+        <span
+          class="groom-name"
+          id="groomName"
+        >
+          سيف
+        </span>
+
+        <span class="name-connector">
+
+          <i></i>
+
+          <small>
+            على الآنسة
+          </small>
+
+          <i></i>
+
+        </span>
+
+        <span
+          class="bride-name"
+          id="brideName"
+        >
+          زهراء
+        </span>
+
+      </div>
+
+
+      <!-- message -->
+
+      <p
+        class="invitation-copy reveal"
+        id="invitationCopy"
+      >
+        وذلك مساء يوم الخميس الموافق 14 أكتوبر 2027
+        في قاعة النخبة للاحتفالات.
+        حضوركم يكتمل به فرحنا ويسعدنا أن تكونوا معنا
+        في بداية هذا العمر.
+      </p>
+
+
+      <!-- postmark -->
+
+      <div class="postmark-wrap reveal">
+
+        <div
+          class="postmark"
+          aria-label="تاريخ حفل الزفاف"
+        >
+
+          <span
+            class="postmark-day"
+            id="postmarkDay"
+          >
+            14
+          </span>
+
+          <span
+            class="postmark-month"
+            id="postmarkMonth"
+          >
+            OCT
+          </span>
+
+          <span
+            class="postmark-year"
+            id="postmarkYear"
+          >
+            2027
+          </span>
+
+        </div>
+
+        <div class="event-summary">
+
+          <span
+            id="heroWeekday"
+            class="event-summary-title"
+          >
+            الخميس
+          </span>
+
+          <span id="heroTime">
+            الساعة 6:00 مساءً
+          </span>
+
+          <span id="heroVenue">
+            قاعة النخبة للاحتفالات
+          </span>
+
+        </div>
+
+      </div>
+
+
+      <!-- signature -->
+
+      <div class="signature-block reveal">
+
+        <span>
+          مع خالص المحبة
+        </span>
+
+        <strong
+          id="hostSignature"
+          class="host-signature"
+        >
+          حامد رشيد
+        </strong>
+
+        <small>
+          والد العريس
+        </small>
+
+      </div>
+
+
+      <div
+        class="letter-scroll-mark"
+        aria-hidden="true"
+      >
+        <span></span>
+      </div>
+
+    </section>
+
+
+
+    <!-- =========================================
+         COUNTDOWN
+    ========================================== -->
+
+    <section
+      class="letter-card countdown-section"
+      aria-labelledby="countdownTitle"
+    >
+
+      <div class="section-heading reveal">
+
+        <span class="section-kicker">
+          الموعد المنتظر
+        </span>
+
+        <h2 id="countdownTitle">
+          حتى تصل لحظة الفرح
+        </h2>
+
+      </div>
+
+
+      <div
+        class="countdown reveal"
+        id="countdown"
+        aria-live="polite"
+      >
+
+        <div class="countdown-unit">
+
+          <strong id="days">
+            00
+          </strong>
+
+          <span>
+            يوم
+          </span>
+
+        </div>
+
+
+        <div class="countdown-divider" aria-hidden="true">
+          :
+        </div>
+
+
+        <div class="countdown-unit">
+
+          <strong id="hours">
+            00
+          </strong>
+
+          <span>
+            ساعة
+          </span>
+
+        </div>
+
+
+        <div class="countdown-divider" aria-hidden="true">
+          :
+        </div>
+
+
+        <div class="countdown-unit">
+
+          <strong id="minutes">
+            00
+          </strong>
+
+          <span>
+            دقيقة
+          </span>
+
+        </div>
+
+
+        <div class="countdown-divider" aria-hidden="true">
+          :
+        </div>
+
+
+        <div class="countdown-unit">
+
+          <strong id="seconds">
+            00
+          </strong>
+
+          <span>
+            ثانية
+          </span>
+
+        </div>
+
+      </div>
+
+
+      <p
+        class="countdown-status"
+        id="countdownStatus"
+      ></p>
+
+    </section>
+
+
+
+    <!-- =========================================
+         DATE / TIME
+    ========================================== -->
+
+    <section
+      class="letter-card event-section"
+      aria-labelledby="eventDetailsTitle"
+    >
+
+      <div class="section-heading reveal">
+
+        <span class="section-kicker">
+          تفاصيل الرسالة
+        </span>
+
+        <h2 id="eventDetailsTitle">
+          موعد حفل الزفاف
+        </h2>
+
+      </div>
+
+
+      <div class="event-grid">
+
+
+        <!-- DATE -->
+
+        <article class="event-item reveal">
+
+          <span class="event-number">
+            01
+          </span>
+
+          <span class="event-label">
+            التاريخ
+          </span>
+
+          <strong id="eventDate">
+            الخميس، 14 أكتوبر 2027
+          </strong>
+
+        </article>
+
+
+        <!-- TIME -->
+
+        <article class="event-item reveal">
+
+          <span class="event-number">
+            02
+          </span>
+
+          <span class="event-label">
+            الوقت
+          </span>
+
+          <strong id="eventTime">
+            6:00 مساءً
+          </strong>
+
+        </article>
+
+
+        <!-- VENUE -->
+
+        <article class="event-item event-item-wide reveal">
+
+          <span class="event-number">
+            03
+          </span>
+
+          <span class="event-label">
+            المكان
+          </span>
+
+          <strong id="eventVenue">
+            قاعة النخبة للاحتفالات
+          </strong>
+
+          <p id="eventAddress">
+            الموصل – نينوى
+          </p>
+
+        </article>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =========================================
+         LOCATION
+    ========================================== -->
+
+    <section
+      class="letter-card destination-section"
+      aria-labelledby="locationTitle"
+    >
+
+      <div class="destination-stamp reveal">
+        وجهة الرسالة
+      </div>
+
+
+      <div class="destination-copy reveal">
+
+        <span class="section-kicker">
+          المكان
+        </span>
+
+        <h2 id="locationTitle">
+          نلتقي بكم هنا
+        </h2>
+
+        <strong id="locationVenue">
+          قاعة النخبة للاحتفالات
+        </strong>
+
+        <p id="locationAddress">
+          الموصل – نينوى
+        </p>
+
+      </div>
+
+
+      <a
+        href="#"
+        class="primary-action reveal"
+        id="mapsButton"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="فتح موقع قاعة الحفل على Google Maps"
+      >
+
+        <span>
+          فتح الموقع
+        </span>
+
+        <span class="action-arrow" aria-hidden="true">
+          ↗
+        </span>
+
+      </a>
+
+    </section>
+
+
+
+    <!-- =========================================
+         ACTIONS
+    ========================================== -->
+
+    <section
+      class="letter-card actions-section"
+      aria-labelledby="actionsTitle"
+    >
+
+      <div class="section-heading reveal">
+
+        <span class="section-kicker">
+          احتفظ بالرسالة
+        </span>
+
+        <h2 id="actionsTitle">
+          موعد لا نريدكم أن تنسوه
+        </h2>
+
+      </div>
+
+
+      <div class="actions-grid reveal">
+
+
+        <button
+          class="secondary-action"
+          id="calendarButton"
+          type="button"
+        >
+
+          <span class="action-icon" aria-hidden="true">
+            +
+          </span>
+
+          <span>
+            إضافة إلى التقويم
+          </span>
+
+        </button>
+
+
+        <button
+          class="secondary-action"
+          id="shareButton"
+          type="button"
+        >
+
+          <span class="action-icon" aria-hidden="true">
+            ↗
+          </span>
+
+          <span>
+            مشاركة الدعوة
+          </span>
+
+        </button>
+
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =========================================
+         CLOSING
+    ========================================== -->
+
+    <section class="letter-card closing-section">
+
+      <div class="closing-seal reveal" aria-hidden="true">
+
+        <span id="closingSealInitial">
+          س
+        </span>
+
+      </div>
+
+
+      <p class="closing-overline reveal">
+        حضوركم هو أجمل ما يضاف إلى هذه الليلة
+      </p>
+
+
+      <h2
+        class="closing-names reveal"
+        id="closingNames"
+      >
+        سيف × زهراء
+      </h2>
+
+
+      <p class="closing-message reveal">
+        ننتظركم لنكتب معاً أول سطر من بداية العمر
+      </p>
+
+
+      <div class="closing-line reveal">
+        <span></span>
+        <i></i>
+        <span></span>
+      </div>
+
+
+      <small
+        class="closing-date reveal"
+        id="closingDate"
+      >
+        14 OCT 2027
+      </small>
+
+    </section>
+
+
+    <footer class="site-footer">
+
+      <span>
+        THE SEALED LETTER
+      </span>
+
+      <span id="footerNames">
+        SAIF × ZAHRAA
+      </span>
+
+    </footer>
+
+
+  </main>
+
+
+
+  <!-- toast -->
+
+  <div
+    class="toast"
+    id="toast"
+    role="status"
+    aria-live="polite"
+    aria-atomic="true"
+  >
+  </div>
+
+</body>
+</html>
