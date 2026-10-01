@@ -1,87 +1,146 @@
 /* ==========================================================
    WED-001 — THE SEALED LETTER
 
-   غيّر بيانات الزبون من هذا المكان فقط
+   غيّر معلومات الزبون هنا فقط
 ========================================================== */
 
 const WEDDING = {
 
-  /* Couple */
+  /* ========================================================
+     COUPLE
+  ======================================================== */
+
   groom: "سيف",
+
   bride: "زهراء",
 
-  /* Parents */
-  groomFather: "السيد حامد رشيد",
-  brideFather: "",
 
-  /* Event */
-  startAt: "2027-10-14T18:00:00+03:00",
-  durationHours: 3,
-  timeZone: "Asia/Baghdad",
+  /* ========================================================
+     PARENTS
+  ======================================================== */
 
-  /* Location */
-  venue: "قاعة النخبة للاحتفالات",
-  city: "الموصل – نينوى",
-  address: "الموصل - نينوى",
+  groomFather:
+    "السيد حامد رشيد",
+
+  brideFather:
+    "",
+
+
+  /* ========================================================
+     EVENT
+  ======================================================== */
+
+  startAt:
+    "2027-10-14T18:00:00+03:00",
+
+  durationHours:
+    3,
+
+  timeZone:
+    "Asia/Baghdad",
+
+
+  /* ========================================================
+     LOCATION
+  ======================================================== */
+
+  venue:
+    "قاعة النخبة للاحتفالات",
+
+  city:
+    "الموصل – نينوى",
+
+  address:
+    "الموصل - نينوى",
+
 
   /*
-    إذا عندك رابط Google Maps مباشر ضعه هنا.
+    ضع رابط Google Maps هنا إذا توفر.
 
     مثال:
-    mapsUrl: "https://maps.app.goo.gl/xxxxxxxx"
 
-    إذا تركته فارغاً سيقوم الموقع بإنشاء
-    Google Maps Search تلقائياً من اسم القاعة والعنوان.
+    mapsUrl:
+    "https://maps.app.goo.gl/xxxxxxxx"
   */
-  mapsUrl: "",
+
+  mapsUrl:
+    "",
+
 
   /*
-    ضع رابط الدعوة النهائي بعد رفعها.
+    ضع رابط الدعوة بعد رفع الموقع.
 
     مثال:
-    shareUrl: "https://saif-zahraa.inviteus.party"
 
-    إذا تركته فارغاً سيستخدم الموقع الرابط الحالي تلقائياً.
+    shareUrl:
+    "https://saif-zahraa.inviteus.party"
   */
-  shareUrl: "",
 
-  /* Invitation */
-  title: "دعوة زفاف سيف وزهراء",
+  shareUrl:
+    "",
+
+
+  /* ========================================================
+     TEXT
+  ======================================================== */
+
+  title:
+    "دعوة زفاف سيف وزهراء",
+
 
   closingMessage:
     "حضوركم يكتمل به فرحنا ويسعدنا أن تكونوا معنا في بداية هذا العمر.",
 
-  /* Opening */
+
+  /* ========================================================
+     OPENING STORAGE
+  ======================================================== */
+
   openingStorageKey:
     "WED001_SEALED_LETTER_OPENED"
+
 };
 
 
+
 /* ==========================================================
-   DOM HELPERS
+   HELPERS
 ========================================================== */
 
 const $ = (selector) =>
   document.querySelector(selector);
 
 
-const setText = (selector, value) => {
 
-  const element = $(selector);
+function setText(
+  selector,
+  value
+) {
+
+  const element =
+    $(selector);
+
 
   if (element) {
-    element.textContent = value;
+
+    element.textContent =
+      value;
+
   }
 
-};
+}
+
 
 
 /* ==========================================================
-   DATE HELPERS
+   DATE
 ========================================================== */
 
 const EVENT_DATE =
-  new Date(WEDDING.startAt);
+  new Date(
+    WEDDING.startAt
+  );
+
 
 
 function getArabicDateParts() {
@@ -90,34 +149,60 @@ function getArabicDateParts() {
     new Intl.DateTimeFormat(
       "ar-IQ",
       {
-        weekday: "long",
-        timeZone: WEDDING.timeZone
+        weekday:
+          "long",
+
+        timeZone:
+          WEDDING.timeZone
       }
-    ).format(EVENT_DATE);
+    )
+      .format(
+        EVENT_DATE
+      );
 
 
   const date =
     new Intl.DateTimeFormat(
       "ar-IQ",
       {
-        day: "numeric",
-        month: "long",
-        year: "numeric",
-        timeZone: WEDDING.timeZone
+        day:
+          "numeric",
+
+        month:
+          "long",
+
+        year:
+          "numeric",
+
+        timeZone:
+          WEDDING.timeZone
       }
-    ).format(EVENT_DATE);
+    )
+      .format(
+        EVENT_DATE
+      );
 
 
   const time =
     new Intl.DateTimeFormat(
       "ar-IQ",
       {
-        hour: "numeric",
-        minute: "2-digit",
-        hour12: true,
-        timeZone: WEDDING.timeZone
+        hour:
+          "numeric",
+
+        minute:
+          "2-digit",
+
+        hour12:
+          true,
+
+        timeZone:
+          WEDDING.timeZone
       }
-    ).format(EVENT_DATE);
+    )
+      .format(
+        EVENT_DATE
+      );
 
 
   return {
@@ -129,27 +214,39 @@ function getArabicDateParts() {
 }
 
 
+
 function getEnglishDateParts() {
 
   const day =
     new Intl.DateTimeFormat(
       "en-GB",
       {
-        day: "2-digit",
-        timeZone: WEDDING.timeZone
+        day:
+          "2-digit",
+
+        timeZone:
+          WEDDING.timeZone
       }
-    ).format(EVENT_DATE);
+    )
+      .format(
+        EVENT_DATE
+      );
 
 
   const month =
     new Intl.DateTimeFormat(
       "en-GB",
       {
-        month: "short",
-        timeZone: WEDDING.timeZone
+        month:
+          "short",
+
+        timeZone:
+          WEDDING.timeZone
       }
     )
-      .format(EVENT_DATE)
+      .format(
+        EVENT_DATE
+      )
       .toUpperCase();
 
 
@@ -157,10 +254,16 @@ function getEnglishDateParts() {
     new Intl.DateTimeFormat(
       "en-GB",
       {
-        year: "numeric",
-        timeZone: WEDDING.timeZone
+        year:
+          "numeric",
+
+        timeZone:
+          WEDDING.timeZone
       }
-    ).format(EVENT_DATE);
+    )
+      .format(
+        EVENT_DATE
+      );
 
 
   return {
@@ -172,33 +275,46 @@ function getEnglishDateParts() {
 }
 
 
+
 /* ==========================================================
    NAME HELPERS
 ========================================================== */
 
-function cleanHonorific(name) {
+function cleanHonorific(
+  name
+) {
 
   return name
-    .replace(/^السيد\s+/u, "")
+    .replace(
+      /^السيد\s+/u,
+      ""
+    )
     .trim();
 
 }
 
 
-function getFirstArabicLetter(name) {
+
+function getFirstArabicLetter(
+  name
+) {
 
   const cleaned =
     name.trim();
 
+
   return cleaned
-    ? Array.from(cleaned)[0]
+    ? Array.from(
+        cleaned
+      )[0]
     : "س";
 
 }
 
 
+
 /* ==========================================================
-   RENDER CONTENT
+   RENDER
 ========================================================== */
 
 function renderWeddingData() {
@@ -206,14 +322,12 @@ function renderWeddingData() {
   const arabicDate =
     getArabicDateParts();
 
+
   const englishDate =
     getEnglishDateParts();
 
-  const coupleArabic =
-    `${WEDDING.groom} × ${WEDDING.bride}`;
 
-
-  const coupleEnglish =
+  const couple =
     `${WEDDING.groom} × ${WEDDING.bride}`;
 
 
@@ -223,17 +337,16 @@ function renderWeddingData() {
     );
 
 
-  /* document */
-
   document.title =
     WEDDING.title;
+
 
 
   /* Opening */
 
   setText(
     "#previewNames",
-    coupleArabic
+    couple
   );
 
 
@@ -249,12 +362,14 @@ function renderWeddingData() {
   );
 
 
-  /* Header */
+
+  /* Reference */
 
   setText(
     "#letterReference",
     `WED · ${englishDate.day} ${englishDate.month} ${englishDate.year}`
   );
+
 
 
   /* Host */
@@ -273,7 +388,8 @@ function renderWeddingData() {
   );
 
 
-  /* Invitation text */
+
+  /* Invitation */
 
   setText(
     "#invitationLead",
@@ -297,6 +413,7 @@ function renderWeddingData() {
     "#invitationCopy",
     `وذلك مساء يوم ${arabicDate.weekday} الموافق ${arabicDate.date} في ${WEDDING.venue}. ${WEDDING.closingMessage}`
   );
+
 
 
   /* Postmark */
@@ -337,6 +454,7 @@ function renderWeddingData() {
   );
 
 
+
   /* Event */
 
   setText(
@@ -363,6 +481,7 @@ function renderWeddingData() {
   );
 
 
+
   /* Location */
 
   setText(
@@ -377,6 +496,7 @@ function renderWeddingData() {
   );
 
 
+
   /* Closing */
 
   setText(
@@ -387,7 +507,7 @@ function renderWeddingData() {
 
   setText(
     "#closingNames",
-    coupleArabic
+    couple
   );
 
 
@@ -399,10 +519,11 @@ function renderWeddingData() {
 
   setText(
     "#footerNames",
-    coupleEnglish
+    couple
   );
 
 }
+
 
 
 /* ==========================================================
@@ -427,6 +548,7 @@ const reduceMotion =
   );
 
 
+
 function invitationWasOpened() {
 
   try {
@@ -446,6 +568,7 @@ function invitationWasOpened() {
 }
 
 
+
 function rememberOpening() {
 
   try {
@@ -456,44 +579,55 @@ function rememberOpening() {
     );
 
   } catch {
-    /* sessionStorage unavailable */
+
+    /* ignore */
+
   }
 
 }
+
 
 
 function completeOpening({
   focusMain = true
 } = {}) {
 
-  envelopeGate.classList.add(
-    "is-complete"
-  );
+  envelopeGate
+    .classList
+    .add(
+      "is-complete"
+    );
 
 
-  envelopeGate.setAttribute(
-    "aria-hidden",
-    "true"
-  );
+  envelopeGate
+    .setAttribute(
+      "aria-hidden",
+      "true"
+    );
 
 
-  document.body.classList.add(
-    "invitation-ready"
-  );
+  document.body
+    .classList
+    .add(
+      "invitation-ready"
+    );
 
 
-  document.body.style.overflow = "";
+  document.body.style.overflow =
+    "";
 
 
   if (focusMain) {
 
     window.setTimeout(
       () => {
+
         invitationMain.focus({
           preventScroll: true
         });
+
       },
-      50
+      80
     );
 
   }
@@ -501,21 +635,28 @@ function completeOpening({
 }
 
 
+
 function openInvitation() {
 
   if (
-    envelopeGate.classList.contains(
-      "is-opening"
-    )
+    envelopeGate
+      .classList
+      .contains(
+        "is-opening"
+      )
   ) {
+
     return;
+
   }
 
 
   rememberOpening();
 
 
-  if (reduceMotion.matches) {
+  if (
+    reduceMotion.matches
+  ) {
 
     completeOpening();
 
@@ -524,15 +665,80 @@ function openInvitation() {
   }
 
 
-  envelopeGate.classList.add(
-    "is-opening"
+  /*
+    STEP 1
+    اختفاء الختم وفتح الغطاء
+  */
+
+  envelopeGate
+    .classList
+    .add(
+      "is-opening"
+    );
+
+
+  /*
+    STEP 2
+    بعد أن يفتح الغطاء
+    نضعه خلف الرسالة
+  */
+
+  window.setTimeout(
+    () => {
+
+      envelopeGate
+        .classList
+        .add(
+          "flap-behind"
+        );
+
+    },
+    390
   );
 
 
   /*
-    أولاً ينكسر الختم ويفتح الظرف
-    ثم ترتفع الرسالة
-    ثم ندخل للدعوة
+    STEP 3
+    أهم إصلاح:
+    الورقة تصعد فوق جيب الظرف بالكامل
+  */
+
+  window.setTimeout(
+    () => {
+
+      envelopeGate
+        .classList
+        .add(
+          "letter-front"
+        );
+
+    },
+    520
+  );
+
+
+  /*
+    STEP 4
+    نترك الرسالة ظاهرة كاملة للحظة
+  */
+
+  window.setTimeout(
+    () => {
+
+      envelopeGate
+        .classList
+        .add(
+          "opening-finish"
+        );
+
+    },
+    1280
+  );
+
+
+  /*
+    STEP 5
+    الانتقال للدعوة
   */
 
   window.setTimeout(
@@ -541,30 +747,38 @@ function openInvitation() {
       completeOpening();
 
     },
-    1550
+    1900
   );
 
 }
 
 
+
 function initializeOpening() {
 
-  if (invitationWasOpened()) {
+  if (
+    invitationWasOpened()
+  ) {
 
-    envelopeGate.classList.add(
-      "is-complete"
-    );
-
-
-    envelopeGate.setAttribute(
-      "aria-hidden",
-      "true"
-    );
+    envelopeGate
+      .classList
+      .add(
+        "is-complete"
+      );
 
 
-    document.body.classList.add(
-      "invitation-ready"
-    );
+    envelopeGate
+      .setAttribute(
+        "aria-hidden",
+        "true"
+      );
+
+
+    document.body
+      .classList
+      .add(
+        "invitation-ready"
+      );
 
 
     return;
@@ -572,27 +786,36 @@ function initializeOpening() {
   }
 
 
-  document.body.classList.remove(
-    "invitation-ready"
-  );
+  document.body
+    .classList
+    .remove(
+      "invitation-ready"
+    );
 
 }
 
 
-openInvitationButton.addEventListener(
-  "click",
-  openInvitation
-);
+
+openInvitationButton
+  .addEventListener(
+    "click",
+    openInvitation
+  );
+
 
 
 /* ==========================================================
    COUNTDOWN
 ========================================================== */
 
-let countdownTimer = null;
+let countdownTimer =
+  null;
 
 
-function formatCountdownNumber(number) {
+
+function formatCountdownNumber(
+  number
+) {
 
   return String(
     Math.max(
@@ -605,6 +828,7 @@ function formatCountdownNumber(number) {
   );
 
 }
+
 
 
 function updateCountdown() {
@@ -621,22 +845,27 @@ function updateCountdown() {
     target - now;
 
 
-  if (difference <= 0) {
+  if (
+    difference <= 0
+  ) {
 
     setText(
       "#days",
       "00"
     );
 
+
     setText(
       "#hours",
       "00"
     );
 
+
     setText(
       "#minutes",
       "00"
     );
+
 
     setText(
       "#seconds",
@@ -650,13 +879,16 @@ function updateCountdown() {
     );
 
 
-    if (countdownTimer) {
+    if (
+      countdownTimer
+    ) {
 
       clearInterval(
         countdownTimer
       );
 
     }
+
 
     return;
 
@@ -681,27 +913,37 @@ function updateCountdown() {
 
   const days =
     Math.floor(
-      difference / day
+      difference /
+      day
     );
 
 
   const hours =
     Math.floor(
-      (difference % day) /
+      (
+        difference %
+        day
+      ) /
       hour
     );
 
 
   const minutes =
     Math.floor(
-      (difference % hour) /
+      (
+        difference %
+        hour
+      ) /
       minute
     );
 
 
   const seconds =
     Math.floor(
-      (difference % minute) /
+      (
+        difference %
+        minute
+      ) /
       second
     );
 
@@ -740,6 +982,7 @@ function updateCountdown() {
 }
 
 
+
 function initializeCountdown() {
 
   updateCountdown();
@@ -754,6 +997,7 @@ function initializeCountdown() {
 }
 
 
+
 /* ==========================================================
    GOOGLE MAPS
 ========================================================== */
@@ -765,7 +1009,9 @@ function getMapsUrl() {
     WEDDING.mapsUrl.trim()
   ) {
 
-    return WEDDING.mapsUrl.trim();
+    return (
+      WEDDING.mapsUrl.trim()
+    );
 
   }
 
@@ -781,10 +1027,13 @@ function getMapsUrl() {
 
   return (
     "https://www.google.com/maps/search/?api=1&query=" +
-    encodeURIComponent(query)
+    encodeURIComponent(
+      query
+    )
   );
 
 }
+
 
 
 function initializeMaps() {
@@ -799,47 +1048,69 @@ function initializeMaps() {
 }
 
 
+
 /* ==========================================================
-   ICS CALENDAR FILE
+   ICS
 ========================================================== */
 
-function pad2(value) {
+function pad2(
+  value
+) {
 
-  return String(value)
-    .padStart(2, "0");
+  return String(
+    value
+  ).padStart(
+    2,
+    "0"
+  );
 
 }
 
 
-function formatUtcForICS(date) {
+
+function formatUtcForICS(
+  date
+) {
 
   return (
     date.getUTCFullYear() +
+
     pad2(
       date.getUTCMonth() + 1
     ) +
+
     pad2(
       date.getUTCDate()
     ) +
+
     "T" +
+
     pad2(
       date.getUTCHours()
     ) +
+
     pad2(
       date.getUTCMinutes()
     ) +
+
     pad2(
       date.getUTCSeconds()
     ) +
+
     "Z"
   );
 
 }
 
 
-function escapeICS(value) {
 
-  return String(value)
+function escapeICS(
+  value
+) {
+
+  return String(
+    value
+  )
     .replace(
       /\\/g,
       "\\\\"
@@ -858,6 +1129,7 @@ function escapeICS(value) {
     );
 
 }
+
 
 
 function createICS() {
@@ -903,13 +1175,11 @@ function createICS() {
     `wed001-${start.getTime()}@inviteus.party`;
 
 
-  const ics =
-`BEGIN:VCALENDAR
+  return `BEGIN:VCALENDAR
 VERSION:2.0
 PRODID:-//InviteUs//The Sealed Letter//AR
 CALSCALE:GREGORIAN
 METHOD:PUBLISH
-X-WR-TIMEZONE:${WEDDING.timeZone}
 BEGIN:VEVENT
 UID:${uid}
 DTSTAMP:${formatUtcForICS(now)}
@@ -923,10 +1193,8 @@ STATUS:CONFIRMED
 END:VEVENT
 END:VCALENDAR`;
 
-
-  return ics;
-
 }
+
 
 
 function downloadICS() {
@@ -952,7 +1220,9 @@ function downloadICS() {
 
 
   const link =
-    document.createElement("a");
+    document.createElement(
+      "a"
+    );
 
 
   link.href =
@@ -963,9 +1233,10 @@ function downloadICS() {
     `wedding-${WEDDING.groom}-${WEDDING.bride}.ics`;
 
 
-  document.body.appendChild(
-    link
-  );
+  document.body
+    .appendChild(
+      link
+    );
 
 
   link.click();
@@ -993,11 +1264,13 @@ function downloadICS() {
 }
 
 
+
 $("#calendarButton")
   .addEventListener(
     "click",
     downloadICS
   );
+
 
 
 /* ==========================================================
@@ -1011,14 +1284,19 @@ function getShareUrl() {
     WEDDING.shareUrl.trim()
   ) {
 
-    return WEDDING.shareUrl.trim();
+    return (
+      WEDDING.shareUrl.trim()
+    );
 
   }
 
 
-  return window.location.href;
+  return (
+    window.location.href
+  );
 
 }
+
 
 
 function getShareText() {
@@ -1037,6 +1315,7 @@ function getShareText() {
 }
 
 
+
 async function copyToClipboard(
   text
 ) {
@@ -1046,9 +1325,11 @@ async function copyToClipboard(
     window.isSecureContext
   ) {
 
-    await navigator.clipboard.writeText(
-      text
-    );
+    await navigator.clipboard
+      .writeText(
+        text
+      );
+
 
     return;
 
@@ -1079,9 +1360,10 @@ async function copyToClipboard(
     "0";
 
 
-  document.body.appendChild(
-    textarea
-  );
+  document.body
+    .appendChild(
+      textarea
+    );
 
 
   textarea.select();
@@ -1095,6 +1377,7 @@ async function copyToClipboard(
   textarea.remove();
 
 }
+
 
 
 async function shareInvitation() {
@@ -1112,9 +1395,11 @@ async function shareInvitation() {
     title:
       WEDDING.title,
 
-    text,
+    text:
+      text,
 
-    url
+    url:
+      url
 
   };
 
@@ -1129,14 +1414,12 @@ async function shareInvitation() {
         shareData
       );
 
+
       return;
 
-    } catch (error) {
-
-      /*
-        إذا المستخدم ضغط Cancel
-        ما نعتبرها مشكلة.
-      */
+    } catch (
+      error
+    ) {
 
       if (
         error?.name ===
@@ -1174,6 +1457,7 @@ async function shareInvitation() {
 }
 
 
+
 $("#shareButton")
   .addEventListener(
     "click",
@@ -1181,14 +1465,19 @@ $("#shareButton")
   );
 
 
+
 /* ==========================================================
    TOAST
 ========================================================== */
 
-let toastTimer = null;
+let toastTimer =
+  null;
 
 
-function showToast(message) {
+
+function showToast(
+  message
+) {
 
   const toast =
     $("#toast");
@@ -1198,12 +1487,15 @@ function showToast(message) {
     message;
 
 
-  toast.classList.add(
-    "is-visible"
-  );
+  toast.classList
+    .add(
+      "is-visible"
+    );
 
 
-  if (toastTimer) {
+  if (
+    toastTimer
+  ) {
 
     clearTimeout(
       toastTimer
@@ -1216,15 +1508,17 @@ function showToast(message) {
     window.setTimeout(
       () => {
 
-        toast.classList.remove(
-          "is-visible"
-        );
+        toast.classList
+          .remove(
+            "is-visible"
+          );
 
       },
       2600
     );
 
 }
+
 
 
 /* ==========================================================
@@ -1234,25 +1528,32 @@ function showToast(message) {
 function initializeReveal() {
 
   const elements =
-    document.querySelectorAll(
-      ".reveal"
-    );
+    document
+      .querySelectorAll(
+        ".reveal"
+      );
 
 
   if (
     reduceMotion.matches ||
-    !("IntersectionObserver" in window)
+    !(
+      "IntersectionObserver"
+      in window
+    )
   ) {
 
     elements.forEach(
       (element) => {
 
-        element.classList.add(
-          "is-visible"
-        );
+        element
+          .classList
+          .add(
+            "is-visible"
+          );
 
       }
     );
+
 
     return;
 
@@ -1271,14 +1572,17 @@ function initializeReveal() {
               entry.isIntersecting
             ) {
 
-              entry.target.classList.add(
-                "is-visible"
-              );
+              entry.target
+                .classList
+                .add(
+                  "is-visible"
+                );
 
 
-              observer.unobserve(
-                entry.target
-              );
+              observer
+                .unobserve(
+                  entry.target
+                );
 
             }
 
@@ -1288,9 +1592,11 @@ function initializeReveal() {
       },
 
       {
-        threshold: 0.14,
+        threshold:
+          0.14,
+
         rootMargin:
-          "0px 0px -40px 0px"
+          "0px 0px -35px 0px"
       }
 
     );
@@ -1307,6 +1613,7 @@ function initializeReveal() {
   );
 
 }
+
 
 
 /* ==========================================================
@@ -1326,6 +1633,7 @@ function initialize() {
   initializeReveal();
 
 }
+
 
 
 document.addEventListener(
